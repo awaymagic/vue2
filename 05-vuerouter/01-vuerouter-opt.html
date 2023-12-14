@@ -1,0 +1,39 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 准备三个链接 -->
+        <router-link to="/welcome">首页</router-link>
+        <router-link to="/teachers">讲师管理</router-link>
+        <router-link to="/courses">课程管理</router-link>
+        <!-- 显示渲染内容的标签 这样写表示复用 -->
+        <router-view></router-view>
+    </div>
+
+    <script src="./vue.min.js"></script>
+    <script src="./vue-router.min.js"></script>
+
+    <script>
+        let routes = [
+            { path: '/', redirect: '/welcome' },
+            { 'path': '/welcome', 'component': { 'template': '<div>欢迎访问首页</div>' } },
+            { 'path': '/teachers', 'component': { 'template': '<div>讲师管理页面</div>' } },
+            { 'path': '/courses', 'component': { 'template': '<div>课程管理页面</div>' } }
+        ]
+        let router = new VueRouter({
+            routes
+        })
+        new Vue({
+            el: "#app",
+            router
+        })
+    </script>
+</body>
+
+</html>

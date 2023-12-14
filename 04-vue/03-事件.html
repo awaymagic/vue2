@@ -1,0 +1,19 @@
+﻿<body>
+    <div id="app">
+        <!-- <button v-on:click="show()">查询</button> -->
+        <!-- v-on 指令的简写形式 @ -->
+        <button @click="search()">查询</button>
+    </div>
+    
+    <script src="vue.min.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        methods: {
+            show() {// show(e){} e代表事件对象，e.target代表调用函数的元素
+                console.log(new Date())
+            }
+        }
+    })
+    </script>
+</body>

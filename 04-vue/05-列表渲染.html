@@ -1,0 +1,31 @@
+﻿<body>
+
+    <div id="app">
+        <!--  v-if="userList" 如果userList定义了，代表true
+            我们希望如果userList未定义或者长度为0都代表false
+        -->
+        <table v-if="userList!==undefined && userList.length>0" border="1px">
+            <!-- <tr v-for="item in userList"></tr> -->
+            <tr v-for="(item, index) in userList">
+                <td>{{index+1}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.age}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="vue.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userList: [
+                    { username: 'helen', age: 18 },
+                    { username: 'peter', age: 28 }
+                ]
+            }
+        })
+    </script>
+
+</body>
