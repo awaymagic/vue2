@@ -28,15 +28,16 @@ export default {
   },
   methods: {
     getBreadcrumb() {
-      let matched = this.$route.matched.filter(item => {
+      const matched = this.$route.matched.filter(item => {
         if (item.name) {
           return true
         }
       })
-      const first = matched[0]
-      if (first && first.name !== 'dashboard') {
-        matched = [{ path: '/dashboard', meta: { title: 'Dashboard' }}].concat(matched)
-      }
+      // 匹配路由作为面包屑 去掉
+      // const first = matched[0]
+      // if (first && first.name !== 'dashboard') {
+      //   matched = [{ path: '/dashboard', meta: { title: 'Dashboard' }}].concat(matched)
+      // }
       this.levelList = matched
     },
     pathCompile(path) {

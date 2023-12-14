@@ -11,10 +11,11 @@ module.exports = {
   },
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
 
-  // add your custom rules here
+  // add your custom rules here // esslink
   //it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
     "vue/max-attributes-per-line": [2, {
+      // 一行允许有多少个属性
       "singleline": 10,
       "multiline": {
         "max": 1,
